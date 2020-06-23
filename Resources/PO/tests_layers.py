@@ -1,23 +1,13 @@
-import os, sys, inspect
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0, parentdir)
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-
-from Locators import Locators
-from TestData import TestData
-from PO.actions import actions
+import sys
+from Resources.Locators import Locators
+from Resources.TestData import TestData
+from Resources.PO.actions import actions
 
 
 
 class Google(actions):
     def __init__(self, driver):
-        self.driver=driver
+        super().__init__(driver)
         self.driver.get(TestData.BASE_URL_GOOGLE)
 
     def search_google(self):

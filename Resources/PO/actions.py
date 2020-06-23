@@ -7,7 +7,12 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 class actions():
+    
+    def __init__(self, driver):
+        self.driver=driver
+        
     def enter_text_and_search(self, by_locator, text):
         return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text+Keys.ENTER)
+    
     def click_on_link(self,by_locator):
         return WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator)).click()
