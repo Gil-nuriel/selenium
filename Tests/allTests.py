@@ -7,7 +7,7 @@ from Resources.TestData import TestData
 from Resources.PO.tests_layers import Google, Amazon
 from Drivers.driver import ChromeDriver, FirefoxDriver
 
-class Test_001_Google(ChromeDriver):
+class Test_001_Google(FirefoxDriver):
 
     def test_001_user_try_to_search_on_google(self):
         self.google = Google(self.driver)
@@ -17,7 +17,7 @@ class Test_001_Google(ChromeDriver):
         self.google = Google(self.driver)
         self.google.search_google2()
 
-class Test_002_Amazon(ChromeDriver):
+class Test_002_Amazon(FirefoxDriver):
 
     def test_001_user_try_to_search_on_amazon(self):
         self.amazon = Amazon(self.driver)

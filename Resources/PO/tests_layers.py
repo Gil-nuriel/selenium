@@ -1,4 +1,3 @@
-import sys
 from Resources.Locators import Locators
 from Resources.TestData import TestData
 from Resources.PO.actions import actions
