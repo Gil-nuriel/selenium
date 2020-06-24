@@ -4,9 +4,9 @@ import sys, os
 
 class Driver(unittest.TestCase):
     def setUp(self):
-        if(os.environ["CHROME"]):
+        if(os.environ.get("CHROME")):
             self.driver = webdriver.Chrome()
-        elif(os.environ["FIREFOX"]):
+        elif(os.environ.get("FIREFOX")):
             self.driver = webdriver.Firefox()
 
     def tearDown(self):
