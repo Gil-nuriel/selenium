@@ -1,16 +1,13 @@
 from selenium import webdriver
 import unittest
+import sys, os
 
-class ChromeDriver(unittest.TestCase):
+class Driver(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
-
-    def tearDown(self):
-        self.driver.quit()
-
-class FirefoxDriver(unittest.TestCase):
-    def setUp(self):
-        self.driver = webdriver.Firefox()
+        if(os.environ["chrome"]):
+            self.driver = webdriver.Chrome()
+        if(os.environ["firefox"]):
+            self.driver = webdriver.Firefox()
 
     def tearDown(self):
         self.driver.quit()
