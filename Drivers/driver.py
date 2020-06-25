@@ -5,7 +5,7 @@ import sys, os
 class Driver(unittest.TestCase):
     def setUp(self):
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--headless")
         if(os.environ.get("CHROME")):
             self.driver = webdriver.Chrome(options=chrome_options)
         elif(os.environ.get("FIREFOX")):
