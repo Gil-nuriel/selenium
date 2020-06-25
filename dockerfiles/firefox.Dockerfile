@@ -1,4 +1,4 @@
-FROM selenium/node-firefox
+FROM selenium/node-firefox:3.141.59-20200525
 
 USER root
 
